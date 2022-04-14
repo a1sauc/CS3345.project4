@@ -17,18 +17,33 @@ public class Printer {
 
     private BinaryHeap<Printjob> h;
 
+    /**
+     * Constructor that initializes BinaryHeap 
+     */
     public Printer(){
         h = new BinaryHeap<>();
     }
 
+    /**
+     * Inserts Printjob object into binary heap.
+     * @param o object to be inserted
+     */
     public void insert(Printjob o) {
         h.insert(o);
     }
     
+    /**
+     * Inserts OutsidePrintjob object into binary heap.
+     * @param o object to be inserted.
+     */
     public void insert(OutsidePrintjob o) {
         h.insert(o);
     }
 
+    /**
+     * Uses BinaryHeap's deleteMin to delete highest priority job from priority queue.
+     * Outputs name, priority, and number of pages. IF OutsidePrintjob, outputs cost as well. 
+     */
     public void delete() {
 
         Printjob inObj;
@@ -53,6 +68,10 @@ public class Printer {
         
     }
 
+    /**
+     * Checks if binaryHeap is empty.
+     * @return true if empty, else returns false
+     */
     public boolean checkEmpty(){
         return h.isEmpty();
     }
